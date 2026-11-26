@@ -1,8 +1,12 @@
 import { Link } from "react-router";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext.jsx";
 
 export default function Navbar() {
+    const { user } = useContext(UserContext);
+
     return (
-       
+
         <nav className="navbar navbar-expand-lg bg-s p-3" data-bs-theme='dark'>
             <div className="container-fluid">
                 <Link to={'/'} className="navbar-brand color-p crimson-text-bold">React</Link>
@@ -14,15 +18,24 @@ export default function Navbar() {
                         <li className="nav-item">
                             <Link to={'/'} className="nav-link" aria-current="page">Home</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link to={'/posts'} className="nav-link">Posts</Link>
-                        </li>
+                        {(user) && (
+                            <li className="nav-item">
+                                <Link to={'/posts'} className="nav-link">Posts</Link>
+                            </li>
+                        )};
+
                         <li className="nav-item">
                             <Link to={'/login'} className="nav-link">Login</Link>
                         </li>
-                        <li className="nav-item">
-                            <Link to={'/register'} className="nav-link">Register</Link>
-                        </li>
+                        {(!user) && (
+                            <li className="nav-item">
+                                <Link to={'/register'} className="nav-link">Register</Link>
+                            </li>
+                        ) || (
+                                <li className="nav-item">
+                                    <span className="nav-link">Ciao {user.name}</span>
+                                </li>
+                            )};
                     </ul>
                 </div>
             </div>

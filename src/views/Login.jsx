@@ -11,11 +11,6 @@ export default function Login() {
                             <Form.Input type="email" />
                         </div>
 
-                        <div className="mb-4">
-                            <label className="label-style d-block mb-2" htmlFor="login-password">Password</label>
-                            <Form.Input type="password" />
-                        </div>
-
                         <Form.Button bg="bg-s">Accedi</Form.Button>
                     </Form>
                 </div>
