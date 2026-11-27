@@ -5,6 +5,7 @@ import Posts from "../views/Posts";
 import PostDetails from "../views/PostDetails";
 import Login from "../views/Login";
 import Register from "../views/Register";
+import Albums from "../views/Albums";
 import { getPosts, getDetailPost, getData } from "./loaders";
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: "/register",
         Component: Register
       },
+      {
+        path: "/albums",
+        Component: Albums
+      }
     ]
   }
 ]);

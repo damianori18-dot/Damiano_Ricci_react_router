@@ -86,3 +86,16 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
 }
+
+.nav-cus{
+    position: fixed;
+    width: 100vw;
+}
+
+.nav-0{
+    background-color: var(--color-s);
+}
+
+.nav-scroll{
+    background-color: var(--color-a);
+}
