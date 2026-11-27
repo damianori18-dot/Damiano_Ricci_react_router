@@ -27,6 +27,10 @@ export default function Navbar() {
                         )}
 
                         <li className="nav-item">
+                            <Link to={'/albums'} className="nav-link">Albums</Link>
+                        </li>
+
+                        <li className="nav-item">
                             <Link to={'/login'} className="nav-link">Login</Link>
                         </li>
                         {(!user) && (
